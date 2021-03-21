@@ -51,6 +51,7 @@ user_table_insert = ("""
                     (user_id, first_name, last_name, gender, level  )
                     VALUES 
                     (%s, %s, %s, %s, %s) 
+                    ON CONFLICT (user_id) DO NOTHING
                     """)
 
 song_table_insert = ("""
@@ -58,6 +59,7 @@ song_table_insert = ("""
                     (song_id, title, artist_id, year, duration)
                     VALUES 
                     (%s, %s, %s, %s, %s) 
+                    ON CONFLICT (song_id) DO NOTHING
                     """)
 
 artist_table_insert =("""
@@ -65,6 +67,7 @@ artist_table_insert =("""
                     (artist_id, name, location, latitude, longitude)
                     VALUES 
                     (%s, %s, %s, %s, %s) 
+                    ON CONFLICT (artist_id) DO NOTHING
                     """)
 
 
@@ -73,6 +76,7 @@ time_table_insert = ("""
                     (start_time, hour, day, week, month, year, weekday)
                     VALUES 
                     (%s, %s, %s, %s, %s, %s, %s) 
+                    ON CONFLICT (start_time) DO NOTHING
                     """)
 
 # FIND SONGS
